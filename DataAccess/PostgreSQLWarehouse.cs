@@ -4,6 +4,10 @@ using System.Text;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// Класс реализующий операции взаимодействия с СУБД PostgreSQL
+    /// </summary>
+    /// <param name="ConnectionString">Строка подключения к СУБД</param>
     class PostgreSQLWarehouse : IWarehouse
     {
         private static string Name = "PostgreSQL";
@@ -12,6 +16,9 @@ namespace DataAccess
         {
             ConnectionString = connectionstring;
         }
+        /// <summary>
+        /// Реализация методов взаимодействия с хранилищем данных в рамках СУБД PostgreSQL
+        /// </summary>
 
         void IWarehouse.CreateDatabase() => Console.WriteLine($"{Name} DB created");
         void IWarehouse.ConnectToDB() => Console.WriteLine($"{Name} DB server connected");

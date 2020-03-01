@@ -4,6 +4,10 @@ using System.Text;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// Класс реализующий операции взаимодействия с СУБД Oracle
+    /// </summary>
+    /// <param name="ConnectionString">Строка подключения к СУБД</param>
     class OracleWarehouse : IWarehouse
     {
         private static string Name = "Oracle";
@@ -12,7 +16,9 @@ namespace DataAccess
         {
             ConnectionString = connectionstring;
         }
-
+        /// <summary>
+        /// Реализация методов взаимодействия с хранилищем данных в рамках СУБД Oracle
+        /// </summary>
         void IWarehouse.CreateDatabase() => Console.WriteLine($"{Name} DB created");
         void IWarehouse.ConnectToDB() => Console.WriteLine($"{Name} DB server connected");
         void IWarehouse.ImplementSQLCommand() => Console.WriteLine($"SQL command implemented to {Name} server");

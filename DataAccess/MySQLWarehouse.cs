@@ -4,6 +4,10 @@ using System.Text;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// Класс реализующий операции взаимодействия с СУБД MySQL
+    /// </summary>
+    /// <param name="ConnectionString">Строка подключения к СУБД</param>
     class MySQLWarehouse : IWarehouse
     {
         private static string Name = "MySQL";
@@ -13,6 +17,9 @@ namespace DataAccess
             ConnectionString = connectionstring;
         }
 
+        /// <summary>
+        /// Реализация методов взаимодействия с хранилищем данных в рамках СУБД MySQL
+        /// </summary>
         void IWarehouse.CreateDatabase() => Console.WriteLine($"{Name} DB created");
         void IWarehouse.ConnectToDB() => Console.WriteLine($"{Name} DB server connected");
         void IWarehouse.ImplementSQLCommand() => Console.WriteLine($"SQL command implemented to {Name} server");

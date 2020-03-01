@@ -5,6 +5,12 @@ namespace DataAccess
 {
     class Program
     {
+        /// <summary>
+        /// Main - точка входа в программу, существует только для демонстрации работы 
+        /// класса-контроллера
+        /// </summary>
+        /// <param name="MyWareHouse">Создает класс-контроллер для выполнения ращличных операций с бд</param>
+        /// <param name="CommandList">Список команд для выполнения</param>
         static void Main(string[] args)
         {
             string DatabaseName = "mysql";
@@ -14,7 +20,7 @@ namespace DataAccess
             CommandList.Add("CreateObject");
             CommandList.Add("CreateUser");
             CommandList.Add("DropObject");
-
+            
             try
             {
                 switch (DatabaseName.ToLower())
@@ -73,7 +79,7 @@ namespace DataAccess
                                 MyWarehouse.CurrentWarehouse.UpdateTable();
                                 break;
                             default:
-                                throw new Exception("Команда введена неверно");
+                                throw new Exception("Wrong command name");
                         }
                     } catch(Exception ex) { Console.WriteLine(ex.Message); }
                 }                
